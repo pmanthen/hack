@@ -45,6 +45,16 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		<dependency>
+    <groupId>io.springfox</groupId>
+    <artifactId>springfox-swagger2</artifactId>
+    <version>2.9.2</version>
+</dependency>
+<dependency>
+    <groupId>io.springfox</groupId>
+    <artifactId>springfox-swagger-ui</artifactId>
+    <version>2.9.2</version>
+</dependency>
 	</dependencies>
 
 	<build>
@@ -58,12 +68,32 @@
 			                <goal>repackage</goal>
 			            </goals>
 			            <configuration>
-			                <mainClass>com.bbtutorials.echo.EchoApplication</mainClass>
+			                <mainClass>com.oss.echo.EchoApplication</mainClass>
 			                <outputDirectory>${project.basedir}/docker</outputDirectory>
 			            </configuration>
 			        </execution>
     			</executions>
 			</plugin>
+			<plugin>
+            <groupId>org.jacoco</groupId>
+            <artifactId>jacoco-maven-plugin</artifactId>
+            <version>0.8.0</version>
+            <executions>
+                <execution>
+                    <id>default-prepare-agent</id>
+                    <goals>
+                        <goal>prepare-agent</goal>
+                    </goals>
+                </execution>
+                <execution>
+                    <id>default-report</id>
+                    <phase>prepare-package</phase>
+                    <goals>
+                        <goal>report</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
 		</plugins>
 	</build>
 
