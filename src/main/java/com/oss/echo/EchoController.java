@@ -7,8 +7,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import hcl.model.Order;
-import hcl.model.OrderItem;
+import com.oss.echo.model.Order;
+import com.oss.echo.model.OrderItem;
+
+
 
 @RestController
 public class EchoController {
