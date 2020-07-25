@@ -1,4 +1,4 @@
-package com.oss.echo;
+package com.oss.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.oss.domain.CustomerOrderResponse;
 import com.oss.echo.model.Order;
 import com.oss.echo.model.OrderItem;
 
@@ -21,8 +22,8 @@ public class EchoController {
     }
 	
 	@GetMapping("/orders/{orderId}")
-    public List<Order> getOrders(@PathVariable String orderId) {
-		List<Order> ret = new ArrayList<Order>();
+    public CustomerOrderResponse getOrders(@PathVariable String orderId) {
+		CustomerOrderResponse ret = new CustomerOrderResponse();
 		
         return ret ;
     }
