@@ -16,6 +16,8 @@ public class OrderedItemController {
     public ResponseEntity<OrderedItem> getOrderItem(@PathVariable String orderItemId) {
 		
 		OrderedItem orderedItem = new OrderedItem();
+		orderedItem.setWorkStationId(1235);
+		orderedItem.setStatus("WIP");
 		orderedItem.setItemDescription("Cheese Pizza");
 		orderedItem.setOrderItemId(1000);
 		orderedItem.setOrderNumber(2000);
@@ -23,6 +25,7 @@ public class OrderedItemController {
 		orderedItem.setQuantity(1);
 		orderedItem.setToping1("Onions");
 		orderedItem.setToping2("Peppers");
+		orderedItem.setToping3("Olives");
 		
         return new ResponseEntity<>(orderedItem, HttpStatus.OK);
     }
