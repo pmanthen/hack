@@ -28,6 +28,10 @@ public class Order  implements java.io.Serializable {
 	private String status;
 	private int createdBy;
 	private Date createdDate;
+	private double	 total;
+
+	
+
 
 	public Order() {
 	}
@@ -102,6 +106,14 @@ public class Order  implements java.io.Serializable {
 		this.createdDate = createdDate;
 	}
 	
+	public double getTotal() {
+		return total;
+	}
+
+
+	public void setTotal(double total) {
+		this.total = total;
+	}
 
 
 
