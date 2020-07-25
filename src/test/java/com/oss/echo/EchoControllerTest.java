@@ -25,4 +25,22 @@ public class EchoControllerTest {
 		assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/echo/praveen",
 				String.class)).contains("Hello praveen");
 	}
+	
+	@Test
+	public void asdShouldReturnDefaultMessage() throws Exception {
+		assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/items/1",
+				String.class)).contains("workStationId");
+	}
+	
+	@Test
+	public void badShouldReturnDefaultMessage() throws Exception {
+		assertThat(this.restTemplate.getForObject("http://localhost:" + port + "workstations/1/items",
+				String.class)).contains("ORDER_RECEIVED");
+	}
+	
+	@Test
+	public void addShouldReturnDefaultMessage() throws Exception {
+		assertThat(this.restTemplate.getForObject("http://localhost:" + port + "orders/1",
+				String.class)).contains("WIP");
+	}
 }
