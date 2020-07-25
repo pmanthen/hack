@@ -23,7 +23,7 @@ public class OrderItem  implements java.io.Serializable {
 	@Column(name = "order_item_id")	
 	private int orderIdItem;
 	
-	@Id
+
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "order_id")
 	private Order order;
