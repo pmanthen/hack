@@ -26,11 +26,17 @@ public class OrderItem  implements java.io.Serializable {
 
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "order_id")
-	private Order order;
+	private Orders order;
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "work_station_id")
 	private WorkStation workStation;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "item_id")
+	private Item itemId;
+	
+	
 	private String status;
 	private Integer quantity;
 	private Integer price;
@@ -40,12 +46,12 @@ public class OrderItem  implements java.io.Serializable {
 	}
 
 
-	public OrderItem(int id, Order order, String status) {
+	public OrderItem(int id, Orders order, String status) {
 		this.orderIdItem = id;
 		this.order = order;
 		this.status = status;
 	}
-	public OrderItem(int id, Order order, WorkStation workStation, String status, Integer quantity, Integer price, Integer toping1) {
+	public OrderItem(int id, Orders order, WorkStation workStation, String status, Integer quantity, Integer price, Integer toping1) {
 		this.orderIdItem = id;
 		this.order = order;
 		this.workStation = workStation;
@@ -56,11 +62,11 @@ public class OrderItem  implements java.io.Serializable {
 	}
 
 
-	public Order getOrder() {
+	public Orders getOrder() {
 		return this.order;
 	}
 
-	public void setOrder(Order order) {
+	public void setOrder(Orders order) {
 		this.order = order;
 	}
 	public WorkStation getWorkStation() {
@@ -106,6 +112,16 @@ public class OrderItem  implements java.io.Serializable {
 
 	public void setOrderIdItem(int orderIdItem) {
 		this.orderIdItem = orderIdItem;
+	}
+
+
+	public Item getItemId() {
+		return itemId;
+	}
+
+
+	public void setItemId(Item itemId) {
+		this.itemId = itemId;
 	}
 
 
